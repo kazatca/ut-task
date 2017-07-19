@@ -1,0 +1,281 @@
+{
+  "name": "cereebro-sample-system",
+  "componentRelationships": [
+    {
+      "component": {
+        "name": "wkfwbwlk",
+        "type": "message-broker/rabbitmq"
+      },
+      "dependencies": [],
+      "consumers": [
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app2",
+            "type": "application/http"
+          }
+        }
+      ]
+    },
+    {
+      "component": {
+        "name": "default-redis",
+        "type": "database/redis"
+      },
+      "dependencies": [],
+      "consumers": [
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app1",
+            "type": "application/http"
+          }
+        }
+      ]
+    },
+    {
+      "component": {
+        "name": "local",
+        "type": "database/mongodb"
+      },
+      "dependencies": [],
+      "consumers": [
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app1",
+            "type": "application/http"
+          }
+        }
+      ]
+    },
+    {
+      "component": {
+        "name": "fancy-app",
+        "type": "application/mobile/android"
+      },
+      "dependencies": [
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app2",
+            "type": "application/http"
+          }
+        }
+      ],
+      "consumers": []
+    },
+    {
+      "component": {
+        "name": "eureka-server",
+        "type": "application/http/registry"
+      },
+      "dependencies": [],
+      "consumers": [
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app1",
+            "type": "application/http"
+          }
+        },
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app2",
+            "type": "application/http"
+          }
+        }
+      ]
+    },
+    {
+      "component": {
+        "name": "jsonplaceholder-typicode-com",
+        "type": "application/http"
+      },
+      "dependencies": [],
+      "consumers": [
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app2",
+            "type": "application/http"
+          }
+        }
+      ]
+    },
+    {
+      "component": {
+        "name": "some-mobile-app",
+        "type": "application/mobile"
+      },
+      "dependencies": [
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app1",
+            "type": "application/http"
+          }
+        }
+      ],
+      "consumers": []
+    },
+    {
+      "component": {
+        "name": "cereebro-sample-netflix-app1",
+        "type": "application/http"
+      },
+      "dependencies": [
+        {
+          "component": {
+            "name": "local",
+            "type": "database/mongodb"
+          }
+        },
+        {
+          "component": {
+            "name": "default-redis",
+            "type": "database/redis"
+          }
+        },
+        {
+          "component": {
+            "name": "PUBLIC",
+            "type": "database/hsql"
+          }
+        },
+        {
+          "component": {
+            "name": "eureka-server",
+            "type": "application/http/registry"
+          }
+        }
+      ],
+      "consumers": [
+        {
+          "component": {
+            "name": "some-mobile-app",
+            "type": "application/mobile"
+          }
+        },
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app2",
+            "type": "application/http"
+          }
+        }
+      ]
+    },
+    {
+      "component": {
+        "name": "default",
+        "type": "database/neo4j"
+      },
+      "dependencies": [],
+      "consumers": [
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app2",
+            "type": "application/http"
+          }
+        }
+      ]
+    },
+    {
+      "component": {
+        "name": "PUBLIC",
+        "type": "database/hsql"
+      },
+      "dependencies": [],
+      "consumers": [
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app1",
+            "type": "application/http"
+          }
+        }
+      ]
+    },
+    {
+      "component": {
+        "name": "cereebro-sample-netflix-app2",
+        "type": "application/http"
+      },
+      "dependencies": [
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app1",
+            "type": "application/http"
+          }
+        },
+        {
+          "component": {
+            "name": "proxied-service-1",
+            "type": "application/http"
+          }
+        },
+        {
+          "component": {
+            "name": "jsonplaceholder-typicode-com",
+            "type": "application/http"
+          }
+        },
+        {
+          "component": {
+            "name": "proxied-service-2",
+            "type": "application/http"
+          }
+        },
+        {
+          "component": {
+            "name": "wkfwbwlk",
+            "type": "message-broker/rabbitmq"
+          }
+        },
+        {
+          "component": {
+            "name": "eureka-server",
+            "type": "application/http/registry"
+          }
+        },
+        {
+          "component": {
+            "name": "default",
+            "type": "database/neo4j"
+          }
+        }
+      ],
+      "consumers": [
+        {
+          "component": {
+            "name": "fancy-app",
+            "type": "application/mobile/android"
+          }
+        }
+      ]
+    },
+    {
+      "component": {
+        "name": "proxied-service-1",
+        "type": "application/http"
+      },
+      "dependencies": [],
+      "consumers": [
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app2",
+            "type": "application/http"
+          }
+        }
+      ]
+    },
+    {
+      "component": {
+        "name": "proxied-service-2",
+        "type": "application/http"
+      },
+      "dependencies": [],
+      "consumers": [
+        {
+          "component": {
+            "name": "cereebro-sample-netflix-app2",
+            "type": "application/http"
+          }
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
